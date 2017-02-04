@@ -1,0 +1,17 @@
+{
+  "name": "isds1001bot",
+  "version": "1.0.0",
+  "description": "a bot for isds 1001 course",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "claudia-bot-builder": "^2.12.0"
+  },
+  "devDependencies": {
+    "claudia": "^2.6.0"   
+  }
+}
