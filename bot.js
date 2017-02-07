@@ -66,8 +66,8 @@ const bot = botBuilder(function(message, originalApiRequest){
   if (message.text === 'WELCOME') {
     return [
       'Hi there! Welcome to ISDS 1001! I\'m Victoria (aka Vicky 💁). I\'ll be you\'re personal tutor.',
-      'This is my first experience ever as a tutor. 🆕🤷😨. You can try to challenge me, but please don\'t get frustrated if I don\'t understand',
-      'I promise I\'ll get better 😀💪',
+      // 'This is my first experience ever as a tutor. 🆕🤷😨. You can try to challenge me, but please don\'t get frustrated if I don\'t understand',
+      // 'I promise I\'ll get better 😀💪',
       'I\'ll work in team with Gabe, Biagio, and Joe',
       'You can go to the main menu in every moment by typing \'Menu\'',
       mainMenu()
