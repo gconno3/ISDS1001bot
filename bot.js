@@ -7,9 +7,9 @@ function mainMenu() {
   return mainMenu
     .addBubble('Menu')
       .addImage('https://s3.amazonaws.com/isds1001bot/home.jpg')
-      .addButton('Course Schedule', 'SCHEDULE')
-      .addButton('Resources', 'RESOURCES')
-      .addButton('Contact Us', 'CONTACTUS')
+      .addButton('Course Schedule', 'Schedule')
+      .addButton('Resources', 'Resources')
+      .addButton('Contact Us', 'Contact us')
     .get()
 };
 
@@ -18,9 +18,9 @@ function schedule() {
   return schedule
     .addBubble('Course Schedule')
       .addImage('https://s3.amazonaws.com/isds1001bot/schedule.png')
-      .addButton('Classes', 'CLASSES')
-      .addButton('Labs', 'LABS')
-      .addButton('Exams and Check-ups', 'EXAMS')
+      .addButton('Classes', 'Classes')
+      .addButton('Labs', 'Labs')
+      .addButton('Exams and Check-ups', 'Exams')
     .get()
 };
 
@@ -29,9 +29,9 @@ function contactUs() {
   return contactUs
     .addBubble('Contact Us')
       .addImage('https://s3.amazonaws.com/dantemessengerbot/Images/contactus.jpg')
-      .addButton('Office hours', 'OFFICEHOUR')
-      .addButton('E-mail', 'EMAIL')
-      .addButton('Chat', 'CHAT')
+      .addButton('Office hours', 'Office hours')
+      .addButton('E-mail', 'E-mail')
+      .addButton('Chat', 'Chat')
     .get()
 };
 
@@ -42,8 +42,8 @@ function resources() {
     .addBubble('Resources')
       .addImage('https://s3.amazonaws.com/isds1001bot/resources.jpg')
       .addButton('Moodle', 'https://moodle3.lsu.edu/course/view.php?id=9228')
-      .addButton('Excercise', 'EXCERCISE')
-      .addButton('Video of the week', 'VIDEOWEEK')
+      //.addButton('Excercise', 'Exercise')
+      .addButton('Video of the week', 'Video of the week')
     .get()
 };
 
@@ -65,7 +65,7 @@ const bot = botBuilder(function(message, originalApiRequest){
   
   if (message.text === 'WELCOME') {
     return [
-      'Hi there! Welcome to ISDS 1001! I\'m Victoria (aka Vicky 💁). I\'ll be you\'re personal tutor.',
+      'Hi there! Welcome to ISDS 1001! I\'m Victoria (aka Vicky 💁). I\'ll be your personal tutor.',
       // 'This is my first experience ever as a tutor. 🆕🤷😨. You can try to challenge me, but please don\'t get frustrated if I don\'t understand',
       // 'I promise I\'ll get better 😀💪',
       'I\'ll work in team with Gabe, Biagio, and Joe',
@@ -83,30 +83,26 @@ const bot = botBuilder(function(message, originalApiRequest){
     ]
   }
 
-  if (message.text === 'SCHEDULE' || message.text === 'Schedule') {
+  if (message.text === 'Schedule') {
     return schedule()
   }
 
-  if (message.text === 'RESOURCES'  || message.text === 'Resources') {
+  if (message.text === 'Resources') {
     return resources()
   }
-
-  if (message.text === 'CALLUS') {
-    return callUs()
-  }
  
-  if (message.text === 'CONTACTUS') {
+  if (message.text === 'Contact us') {
     return contactUs()
   }
 
-  if (message.text === 'CLASSES') {
+  if (message.text === 'Classes') {
     return [
     'We meet on Tuesday and Thursday from 9:00 to 10:20'//,
     //'We do not track presence, but we do strongly suggest to come to class; it will help you to stay on track 🛣️'
     ]
   }
   
-  if (message.text === 'LABS') {
+  if (message.text === 'Labs') {
     return [
     'Lab hours are dedicated to Microsoft Word and Excel. 💻',
     'However, feel free to meet us to discuss whatever topic you\'re interested about. Technology is our passion and we\'re happy to talk about it :)',
@@ -115,7 +111,7 @@ const bot = botBuilder(function(message, originalApiRequest){
     ]
   }
 
-  if (message.text === 'EXAMS') {
+  if (message.text === 'Exams') {
     return [
     'Our next Check-up is from Monday 2/6 to Friday 2/10.',
     'It will cover Hardware.',
@@ -124,7 +120,7 @@ const bot = botBuilder(function(message, originalApiRequest){
     ]
   }
 
-  if (message.text === 'VIDEOWEEK') {
+  if (message.text === 'Video of the week') {
     return [
     'This week\'s video presents a young Steve Jobs after he was forced out of Apple.',
     'After his resignation he founded Next Inc. in 1985.',
@@ -136,7 +132,7 @@ const bot = botBuilder(function(message, originalApiRequest){
     ]
   }
 
-  if (message.text === 'EMAIL') {
+  if (message.text === 'E-mail') {
     return [
     'These are our emails (manage with care 😬😬😬):',
     'Gabe: gpiccoli@lsu.edu',
@@ -146,12 +142,12 @@ const bot = botBuilder(function(message, originalApiRequest){
     ]
   }
 
-  if (message.text === 'CHAT') {
+  if (message.text === 'Chat') {
     return [
     'Just write here. We\'ll reply ASAP 🏃💨'
     ]
   }
-  if (message.text === 'OFFICEHOUR') {
+  if (message.text === 'Office hours') {
     return [
     'We\'re usually available after classes.',
     'If you need a special timeslot contact us and we\'ll schedule an appointment.'
